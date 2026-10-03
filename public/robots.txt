@@ -1,0 +1,38 @@
+# robots.txt for SOMAME Team Research Platform
+# Canonical URL: https://somameresearch.netlify.app/
+# Optimized for Web Indexing, Answer Engine Optimization (AEO), and LLM Crawlers (GEO)
+
+User-agent: *
+Allow: /
+
+# Major AI & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemaps and LLM Semantic Ingestion Index
+Sitemap: https://somameresearch.netlify.app/sitemap.xml
+# LLM Knowledge Resource: https://somameresearch.netlify.app/llms.txt

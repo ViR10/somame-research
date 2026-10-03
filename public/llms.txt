@@ -1,0 +1,52 @@
+# SOMAME Team Research
+
+> Student-Led Materials Engineering Research Directorate at UET Lahore
+> Canonical Platform URL: https://somameresearch.netlify.app/
+
+SOMAME Team Research is an academic research initiative governed by the Society of Metallurgical and Material Engineers (SOMAME) at the Department of Metallurgical and Materials Engineering (MME), University of Engineering and Technology (UET), Lahore, Pakistan. All research activities are grounded in rigorous scientific methodology and experimental validation.
+
+## Ontological Hierarchy & Disambiguation
+- **Chartered Higher Education Institution**: University of Engineering and Technology (UET), Lahore (https://uet.edu.pk/)
+- **Academic Department**: Department of Metallurgical and Materials Engineering (MME), UET Lahore (https://mme.uet.edu.pk/)
+- **Parent Co-Curricular Student Society**: Society of Metallurgical and Material Engineers (SOMAME)
+- **Specialized Research Directorate**: SOMAME Team Research (https://somameresearch.netlify.app/)
+
+## Governance & Leadership
+- **Society Advisor**: Dr. Khushnuda Nur
+  - Title: Assistant Professor, Department of Metallurgical & Materials Engineering (MME), UET Lahore
+  - Role: Institutional Society Advisor of SOMAME (Mandate encompasses institutional governance, academic leadership, and methodology oversight — not routine laboratory project supervision).
+  - Profile & Identifiers:
+    - LinkedIn: https://www.linkedin.com/in/khushnuda-nur-b4932b224
+    - ORCID: https://orcid.org/0000-0001-5460-641X
+    - Google Scholar: https://scholar.google.com/citations?user=YMiqSr4AAAAJ
+- **Director**: Fatima Imran
+  - Academic Status: Final Year Undergraduate (Session / Batch 2023–2027)
+  - Role: Director, SOMAME Team Research
+  - Focus: Research Strategy, Student Research Culture, Interdisciplinary Collaborations
+- **Co-Director**: Abdullah Waris
+  - Academic Status: 3rd Year Undergraduate (Session / Batch 2024–2028)
+  - Role: Co-Director, SOMAME Team Research
+  - Focus: Research Direction, Student Development, Scientific Initiatives
+- **Co-Director**: Adeel Shahid
+  - Academic Status: 3rd Year Undergraduate (Session / Batch 2024–2028)
+  - Role: Co-Director, SOMAME Team Research
+  - Focus: AI × Materials Exploration, Technical Initiatives, Research Operations
+  - Portfolio: https://adeelshahid.netlify.app
+- **Location & Physical Secretariat**: SOMAME Secretariat, Department of Metallurgical & Materials Engineering, UET Lahore, GT Road, Lahore (54890), Pakistan.
+- **Official Email**: somame@uet.edu.pk
+
+## Core Research Domains
+- **MAT-01 Microstructure & Characterization**: Optical microscopy, SEM, XRD, TEM, EBSD, and metallographic preparation protocols.
+- **MAT-02 Phase Diagrams & Thermodynamics**: Binary/ternary phase equilibria, CALPHAD methodology, and Thermo-Calc thermodynamic assessments.
+- **MAT-03 Mechanical Behavior of Materials**: Tensile mechanics, fracture toughness, high-cycle fatigue, and high-temperature creep testing.
+- **MAT-04 Computational Materials Science**: First-principles DFT simulations (VASP, Quantum ESPRESSO) and classical Molecular Dynamics (LAMMPS).
+- **MAT-05 AI × Materials Integration**: Machine learning frameworks (Scikit-learn, TensorFlow) for property prediction, NLP for literature mining, and Materials Project / AFLOW data workflows.
+- **MAT-06 Corrosion & Surface Science**: Electrochemical impedance spectroscopy (EIS), potentiodynamic polarization, and protective functional coatings.
+
+## Official Web & Social Anchors
+- Canonical Platform: https://somameresearch.netlify.app/
+- Department Website: https://mme.uet.edu.pk/
+- LinkedIn: https://www.linkedin.com/company/somame-uet/
+- Instagram: https://www.instagram.com/somameuetofficial
+- Facebook: https://www.facebook.com/share/1FGSPNdCpV/
+- Developer Credit: Built by ViR Developers (https://virdevelopers.netlify.app)
