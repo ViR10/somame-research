@@ -71,7 +71,11 @@ export const TeamView: React.FC = () => {
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden bg-white border border-[#E8E4DF] shadow-md shrink-0">
                 <img
                   src={advisorData.image}
-                  alt={advisorData.name}
+                  alt={`${advisorData.name} - Society Advisor, SOMAME Team Research, Assistant Professor MME UET Lahore`}
+                  width={224}
+                  height={224}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 right-3 bg-[#8B2E1A] text-white px-3 py-1 rounded-full text-[10px] font-mono font-bold shadow-sm tracking-wider">
@@ -146,7 +150,11 @@ export const TeamView: React.FC = () => {
               <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-[#E8E4DF] shadow-sm shrink-0 bg-[#F8F7F5]">
                 <img
                   src={directorData.image}
-                  alt={directorData.name}
+                  alt={`${directorData.name} - Director, SOMAME Team Research (${directorData.year || ''} Batch ${directorData.batch || ''})`}
+                  width={144}
+                  height={144}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -211,7 +219,11 @@ export const TeamView: React.FC = () => {
                   <div className="relative aspect-square w-full max-w-[190px] mx-auto rounded-2xl overflow-hidden bg-[#F8F7F5] border border-[#E8E4DF] mb-5 shadow-xs">
                     <img
                       src={coDir.image}
-                      alt={coDir.name}
+                      alt={`${coDir.name} - Co-Director, SOMAME Team Research (${coDir.year || ''} Batch ${coDir.batch || ''})`}
+                      width={190}
+                      height={190}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -370,7 +382,11 @@ export const TeamView: React.FC = () => {
             <div className="flex items-start gap-4 sm:gap-5 mb-6 pr-8">
               <img
                 src={selectedMember.image}
-                alt={selectedMember.name}
+                alt={`${selectedMember.name} - ${selectedMember.role}`}
+                width={80}
+                height={80}
+                loading="lazy"
+                decoding="async"
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-[#E8E4DF] shadow-xs shrink-0"
               />
               <div>

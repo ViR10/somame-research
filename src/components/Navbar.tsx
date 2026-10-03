@@ -65,7 +65,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#E8E4DF] bg-white flex items-center justify-center shadow-xs group-hover:border-slate-400 transition-colors">
               <img
                 src={siteConfig.logos.somame}
-                alt="SOMAME"
+                alt="SOMAME Team Research - Society of Metallurgical and Material Engineers UET Lahore"
+                width={36}
+                height={36}
                 className="w-9 h-9 object-contain"
               />
             </div>

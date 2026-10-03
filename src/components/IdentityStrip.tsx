@@ -30,7 +30,15 @@ export const IdentityStrip: React.FC = () => {
               <div key={i} className="flex items-center gap-3">
                 {i > 0 && <span className="text-[#E8E4DF] text-xl hidden sm:block">/</span>}
                 <div className="w-8 h-8 rounded-lg overflow-hidden border border-[#E8E4DF] bg-white p-0.5 flex items-center justify-center shadow-2xs">
-                  <img src={id.logo} alt={id.sub} className="w-full h-full object-contain" />
+                  <img
+                    src={id.logo}
+                    alt={`${id.sub} - ${id.label}`}
+                    width={32}
+                    height={32}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <div className="text-xs text-[#0F172A] font-bold leading-none">{id.sub}</div>

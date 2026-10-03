@@ -37,7 +37,11 @@ export const LeadershipPreview: React.FC<{ onMeetTeam: () => void }> = ({ onMeet
             <div className="w-28 h-28 rounded-2xl overflow-hidden border border-[#E8E4DF]">
               <img
                 src={advisorData.image}
-                alt={advisorData.name}
+                alt={`${advisorData.name} - Society Advisor, SOMAME Team Research, Assistant Professor MME UET Lahore`}
+                width={112}
+                height={112}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
@@ -77,7 +81,11 @@ export const LeadershipPreview: React.FC<{ onMeetTeam: () => void }> = ({ onMeet
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-[#E8E4DF] mb-4 bg-[#F8F7F5]">
                 <img
                   src={m.image}
-                  alt={m.name}
+                  alt={`${m.name} - ${m.role} (${m.year || ''} Batch ${m.batch || ''}), SOMAME Team Research`}
+                  width={80}
+                  height={80}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />

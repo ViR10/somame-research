@@ -33,7 +33,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#E8E4DF] bg-white p-1 flex items-center justify-center shadow-xs shrink-0">
                 <img
                   src={siteConfig.logos.somame}
-                  alt="SOMAME Logo"
+                  alt="SOMAME Team Research - Official Society Logo"
+                  width={36}
+                  height={36}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -245,7 +249,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="w-9 h-9 rounded-xl bg-white border border-[#E8E4DF] p-1 flex items-center justify-center shadow-2xs shrink-0">
                   <img
                     src={siteConfig.logos.department}
-                    alt="UET MME Department Logo"
+                    alt="Department of Metallurgical and Materials Engineering (MME), UET Lahore Logo"
+                    width={36}
+                    height={36}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain"
                   />
                 </div>
