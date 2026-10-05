@@ -1,71 +1,122 @@
 import React from 'react';
+import { CheckCircle2, Clock, ArrowRight, ShieldCheck } from 'lucide-react';
 
-export const AchievementPreview: React.FC<{ onViewArchive: () => void }> = ({ onViewArchive }) => (
-  <section className="bg-white section-pad">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Large empty state card */}
-        <div className="relative overflow-hidden rounded-3xl border-2 border-dashed border-[#E8E4DF] p-12 sm:p-16 text-center bg-[#F8F7F5]">
-          {/* Subtle dot pattern */}
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `radial-gradient(#8B2E1A 1px, transparent 1px)`,
-              backgroundSize: '22px 22px',
-            }}
-          />
+export const AchievementPreview: React.FC<{ onViewArchive: () => void }> = ({ onViewArchive }) => {
+  const milestones = [
+    {
+      status: 'verified',
+      code: 'M-01',
+      title: 'Institutional Directorate & Advisor Onboarding',
+      desc: 'Officially confirmed under Society Advisor Dr. Khushnuda Nur, Assistant Professor MME.',
+      badge: 'Completed & Active',
+    },
+    {
+      status: 'verified',
+      code: 'M-02',
+      title: 'Open Research Platform & Knowledge Engine',
+      desc: 'Launched dedicated academic platform for student research, computational workflows, and CALPHAD datasets.',
+      badge: 'Live & Operational',
+    },
+    {
+      status: 'in-progress',
+      code: 'M-03',
+      title: 'Methodology Workshops & Scientific Literature Circles',
+      desc: 'Undergraduate training in XRD/SEM characterization, scientific writing, and AI tools integration.',
+      badge: 'Active Q1 2026',
+    },
+    {
+      status: 'upcoming',
+      code: 'M-04',
+      title: 'Peer-Reviewed Experimental Dissemination',
+      desc: 'Targeted research contributions in conference proceedings and academic journals with verified data.',
+      badge: 'Roadmap Milestone',
+    },
+  ];
 
-          {/* Icon */}
-          <div className="relative mx-auto w-20 h-20 rounded-2xl border border-[#E8E4DF] bg-white flex items-center justify-center mb-6 shadow-xs">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8B2E1A" strokeWidth="1.5">
-              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
-              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
-              <path d="M4 22h16"/>
-              <path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"/>
-              <path d="M6 4h12v6c0 3.31-2.69 6-6 6s-6-2.69-6-6V4Z"/>
-            </svg>
-            <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#8B2E1A] flex items-center justify-center">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-            </span>
-          </div>
-
-          <div className="relative">
-            <div className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest mb-3">
-              Achievement Archive
+  return (
+    <section className="bg-white py-20 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8E4DF] bg-[#F8F7F5] mb-4 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B2E1A] animate-pulse" />
+              <span className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest">
+                Weekly Research Challenges &amp; Achievements
+              </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] leading-tight mb-4">
-              Our Story Is
-              <br />
-              Just Beginning
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight">
+              Collaborative Tasks. <span className="text-[#8B2E1A]">Performer of the Week.</span>
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed max-w-xl mx-auto mb-8">
-              SOMAME Team Research is in its founding stage. Every achievement will be carefully documented,
-              peer-reviewed within our team, and published here once verified. No fabricated milestones —
-              only real progress.
+            <p className="mt-2 text-base text-slate-600 max-w-xl">
+              Combined senior-junior research cohorts tackle weekly materials engineering tasks. The top-performing group is spotlighted here with verified departmental credit.
             </p>
-
-            {/* Category placeholders */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-8">
-              {['Publications', 'Competitions', 'Workshops', 'Certifications', 'Projects', 'Recognition'].map((cat) => (
-                <div
-                  key={cat}
-                  className="py-3 px-4 rounded-xl border border-dashed border-[#E8E4DF] bg-white text-[12px] font-semibold text-slate-400"
-                >
-                  {cat}
-                  <div className="text-[10px] font-mono mt-0.5 text-slate-300">Pending</div>
-                </div>
-              ))}
-            </div>
-
-            <button
-              onClick={onViewArchive}
-              className="px-6 py-3 rounded-xl border border-[#E8E4DF] bg-white text-[#0F172A] font-semibold text-sm hover:bg-white hover:border-[#0F172A]/30 hover:shadow-md transition-all font-mono shadow-2xs"
-            >
-              View Achievement Archive →
-            </button>
           </div>
+
+          <button
+            onClick={onViewArchive}
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#E8E4DF] hover:border-slate-400 bg-white hover:bg-[#F8F7F5] text-[#0F172A] font-semibold text-sm transition-all font-mono shadow-2xs cursor-pointer self-start lg:self-auto"
+          >
+            <span>Explore Weekly Challenge Hub</span>
+            <ArrowRight className="w-4 h-4 text-[#8B2E1A]" />
+          </button>
         </div>
+
+        {/* Milestone Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {milestones.map((m, idx) => {
+            const isDone = m.status === 'verified';
+            const isInProgress = m.status === 'in-progress';
+            return (
+              <div
+                key={idx}
+                className={`p-5 rounded-2xl border transition-all flex flex-col justify-between group ${
+                  isDone
+                    ? 'border-[#8B2E1A]/20 bg-gradient-to-b from-[#FAF0EE]/30 to-white hover:border-[#8B2E1A]/40 hover:shadow-md'
+                    : isInProgress
+                    ? 'border-slate-300 bg-white hover:shadow-md'
+                    : 'border-dashed border-[#E8E4DF] bg-[#F8F7F5]/60 hover:bg-white'
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white border border-[#E8E4DF] text-slate-600">
+                      {m.code}
+                    </span>
+                    <span
+                      className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 ${
+                        isDone
+                          ? 'bg-[#FAF0EE] text-[#8B2E1A]'
+                          : isInProgress
+                          ? 'bg-slate-100 text-slate-800'
+                          : 'bg-slate-100 text-slate-400'
+                      }`}
+                    >
+                      {isDone && <CheckCircle2 className="w-2.5 h-2.5" />}
+                      {isInProgress && <Clock className="w-2.5 h-2.5" />}
+                      {m.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-bold text-[#0F172A] text-sm sm:text-base leading-snug mb-2">
+                    {m.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                    {m.desc}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-[#E8E4DF] flex items-center justify-between text-[10px] font-mono text-slate-400">
+                  <span>Verified Record</span>
+                  <ShieldCheck className={`w-3.5 h-3.5 ${isDone ? 'text-[#8B2E1A]' : 'text-slate-300'}`} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};

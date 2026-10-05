@@ -134,3 +134,19 @@
   animation: shimmer 2.5s ease-in-out infinite;
 }
 
+/* Netlify Injected Badge & Drawer Suppression */
+iframe[src*="netlify"],
+div[id*="netlify"],
+[data-netlify-drawer],
+netlify-drawer,
+#netlify-drawer-container,
+.netlify-badge,
+a[href*="netlify.com"][class*="badge"],
+div:has(> a[href*="netlify.com"]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+

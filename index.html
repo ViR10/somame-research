@@ -10,6 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
+    <!-- Critical Image Preloads for Instant Page Open -->
+    <link rel="preload" as="image" href="/somame-logo.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/advisor.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/director.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/abdullah.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/adeel.png" fetchpriority="high" />
+
     <!-- Primary SEO Metadata -->
     <title>SOMAME Team Research | Department of Metallurgical & Materials Engineering (UET Lahore)</title>
     <meta
@@ -273,6 +280,44 @@
   </head>
   <body class="bg-white text-[#0F172A] antialiased">
     <div id="root"></div>
+    <!-- Netlify Badge & Drawer Removal Handler -->
+    <style>
+      iframe[src*="netlify"],
+      [data-netlify-drawer],
+      #netlify-drawer-container,
+      .netlify-badge,
+      div[id*="netlify"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+    <script>
+      (function() {
+        function removeNetlifyBadge() {
+          const badgeSelectors = [
+            'iframe[src*="netlify"]',
+            '#netlify-drawer-container',
+            '[data-netlify-drawer]',
+            'netlify-drawer',
+            '.netlify-badge',
+            'a[href*="netlify.com"][class*="badge"]'
+          ];
+          badgeSelectors.forEach(function(sel) {
+            document.querySelectorAll(sel).forEach(function(el) {
+              try { el.remove(); } catch(e) { el.style.display = 'none'; }
+            });
+          });
+        }
+        window.addEventListener('DOMContentLoaded', removeNetlifyBadge);
+        window.addEventListener('load', removeNetlifyBadge);
+        if (typeof MutationObserver !== 'undefined') {
+          var observer = new MutationObserver(removeNetlifyBadge);
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

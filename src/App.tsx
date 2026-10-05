@@ -2,15 +2,10 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { IdentityStrip } from './components/IdentityStrip';
-import { InitiativeIntroduction } from './components/InitiativeIntroduction';
-import { ResearchDevelopmentFramework } from './components/ResearchDevelopmentFramework';
-import { ResearchDirections } from './components/ResearchDirections';
-import { AIMaterialsSection } from './components/AIMaterialsSection';
-import { ResponsibleResearchSection } from './components/ResponsibleResearchSection';
+import { InteractiveResearchHub } from './components/InteractiveResearchHub';
+import { InteractivePathway } from './components/InteractivePathway';
 import { LeadershipPreview } from './components/LeadershipPreview';
 import { AchievementPreview } from './components/AchievementPreview';
-import { DepartmentalImpact } from './components/DepartmentalImpact';
-import { PlatformEvolution } from './components/PlatformEvolution';
 import { ClosingCTA } from './components/ClosingCTA';
 import { Footer } from './components/Footer';
 
@@ -38,10 +33,10 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
-        {/* HOMEPAGE ARCHITECTURE */}
+        {/* STREAMLINED, INTERACTIVE HOMEPAGE ARCHITECTURE */}
         {activeTab === 'home' && (
           <>
-            {/* 1. Research Hero (with AnimatedSmartwatch Visual) */}
+            {/* 1. Research Hero (Interactive Motion Art & Mode Switcher) */}
             <Hero
               onExploreResearch={() => handleNavigate('research')}
               onMeetTeam={() => handleNavigate('team')}
@@ -50,40 +45,25 @@ export default function App() {
             {/* 2. Departmental Identity Strip */}
             <IdentityStrip />
 
-            {/* 3. Initiative Introduction */}
-            <InitiativeIntroduction />
-
-            {/* 4. Research Development Framework (Our Approach) */}
-            <ResearchDevelopmentFramework />
-
-            {/* 5. Research Directions (Research at SOMAME) */}
-            <ResearchDirections
+            {/* 3. Interactive Research Suite (Dynamic Domain & Instrument Explorer) */}
+            <InteractiveResearchHub
               onExploreResearch={() => handleNavigate('research')}
             />
 
-            {/* 6. AI × Materials Signature Section */}
-            <AIMaterialsSection />
+            {/* 4. Interactive 4-Stage Research Pathway */}
+            <InteractivePathway />
 
-            {/* 7. Responsible Research / Scientific Integrity */}
-            <ResponsibleResearchSection />
-
-            {/* 8. Leadership Preview */}
+            {/* 5. Governance & Leadership Chain (Advisor Guidance first, then Director & Co-Directors) */}
             <LeadershipPreview
               onMeetTeam={() => handleNavigate('team')}
             />
 
-            {/* 9. Progress & Recognition (Achievement Preview) */}
+            {/* 6. Milestone Progress & Verification Ticker */}
             <AchievementPreview
               onViewArchive={() => handleNavigate('achievements')}
             />
 
-            {/* 10. Departmental Impact */}
-            <DepartmentalImpact />
-
-            {/* 11. Platform Evolution Timeline */}
-            <PlatformEvolution />
-
-            {/* 12. Closing CTA */}
+            {/* 7. Closing CTA */}
             <ClosingCTA
               onExploreResearch={() => handleNavigate('research')}
               onMeetTeam={() => handleNavigate('team')}

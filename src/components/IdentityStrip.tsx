@@ -35,7 +35,8 @@ export const IdentityStrip: React.FC = () => {
                     alt={`${id.sub} - ${id.label}`}
                     width={32}
                     height={32}
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     className="w-full h-full object-contain"
                   />

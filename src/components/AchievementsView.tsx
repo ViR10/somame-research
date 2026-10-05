@@ -1,116 +1,295 @@
-import React from 'react';
+import { 
+  Trophy, 
+  Users, 
+  CheckCircle2, 
+  Clock, 
+  Sparkles, 
+  ShieldCheck, 
+  Award, 
+  FileText, 
+  GraduationCap,
+  Calendar,
+  Layers
+} from 'lucide-react';
 
-const categories = [
-  { title: 'Research Publications', sub: 'Peer-reviewed papers & reports', icon: '📄' },
-  { title: 'Competition Awards', sub: 'National & international recognition', icon: '🏆' },
-  { title: 'Workshops Conducted', sub: 'Internal & external technical sessions', icon: '📚' },
-  { title: 'Certifications', sub: 'Technical skill verifications', icon: '🎓' },
-  { title: 'Research Projects', sub: 'Completed investigations', icon: '🔬' },
-  { title: 'External Recognition', sub: 'Faculty & industry acknowledgements', icon: '⭐' },
-];
+export const AchievementsView: React.FC = () => {
+  const steps = [
+    {
+      num: '01',
+      title: 'Meeting & Task Assignment',
+      desc: 'During weekly departmental research meetings, the Directorate and Advisor assign real materials science problems, characterization literature reviews, or computational scripts.',
+      icon: Calendar,
+      badge: 'Weekly Kickoff',
+    },
+    {
+      num: '02',
+      title: 'Senior–Junior Syndicates',
+      desc: 'Students are organized into combined teams pairing senior undergraduates with juniors — fostering peer mentorship, hands-on guidance, and collaborative problem-solving.',
+      icon: Users,
+      badge: 'Peer Collaboration',
+    },
+    {
+      num: '03',
+      title: 'Rigorous Report Submission',
+      desc: 'Groups submit evidence-based assignment reports, CALPHAD/phase analyses, or Python notebooks with strict citation standards and zero fabricated data.',
+      icon: FileText,
+      badge: 'Scientific Submission',
+    },
+    {
+      num: '04',
+      title: 'Performer of the Week Spotlight',
+      desc: 'The best-performing group is awarded "Performer of the Week" on this official portal — showcasing their names, batch, domain, and report for institutional identity.',
+      icon: Trophy,
+      badge: 'Academic Recognition',
+    },
+  ];
 
-const verificationSteps = [
-  { step: '01', title: 'Documentation', desc: 'All achievements must be supported by documented evidence.' },
-  { step: '02', title: 'Internal Review', desc: 'Reviewed by SOMAME Directorate for accuracy and completeness.' },
-  { step: '03', title: 'Advisor Confirmation', desc: 'Validated by the Society Advisor — Dr. Khushnuda Nur.' },
-  { step: '04', title: 'Publication', desc: 'Published here with full attribution and verifiable references.' },
-  { step: '05', title: 'Archive', desc: 'Permanently archived for institutional and historical record.' },
-];
+  const rubrics = [
+    {
+      title: 'Scientific Rigor & Depth',
+      desc: 'Evidence-based analysis adhering to physical metallurgical principles and validated literature.',
+      weight: '30%',
+    },
+    {
+      title: 'Senior–Junior Mentorship',
+      desc: 'Demonstrated collaborative teamwork where junior members actively contribute and learn.',
+      weight: '25%',
+    },
+    {
+      title: 'Literature & Citation Integrity',
+      desc: 'Authentic sources from peer-reviewed journals (Elsevier, Springer, ASM) with zero hallucinations.',
+      weight: '25%',
+    },
+    {
+      title: 'Technical Presentation',
+      desc: 'Clear diagrams, structured conclusions, and professional academic formatting.',
+      weight: '20%',
+    },
+  ];
 
-export const AchievementsView: React.FC = () => (
-  <div className="bg-white">
-    {/* Hero */}
-    <section className="bg-[#F8F7F5] border-b border-[#E8E4DF] py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8E4DF] bg-white mb-6 shadow-2xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#8B2E1A]" />
-          <span className="text-[11px] font-mono font-semibold text-[#8B2E1A] uppercase tracking-widest">Achievement Archive</span>
+  const studentBenefits = [
+    {
+      icon: Award,
+      title: 'Public Academic Identity',
+      desc: 'Featured recognition on the official SOMAME Research platform that students can proudly link on their LinkedIn, CV, and graduate school applications.',
+    },
+    {
+      icon: GraduationCap,
+      title: 'Direct Faculty Mentorship',
+      desc: 'Top assignment reports receive direct critique and guidance from our Society Advisor Dr. Khushnuda Nur and departmental faculty.',
+    },
+    {
+      icon: Layers,
+      title: 'Pathway to Co-Authorship',
+      desc: 'Outstanding weekly assignment discoveries are synthesized into formal research manuscripts targeted for conference and journal publication.',
+    },
+  ];
+
+  return (
+    <div className="bg-white">
+      {/* 1. Header Hero */}
+      <section className="bg-[#F8F7F5] border-b border-[#E8E4DF] py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#8B2E1A]/20 bg-[#FAF0EE] text-[#8B2E1A] mb-5 shadow-2xs">
+            <Trophy className="w-3.5 h-3.5 text-[#8B2E1A]" />
+            <span className="text-[11px] font-mono font-bold tracking-widest uppercase">
+              Weekly Research Merit System
+            </span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0F172A] leading-tight tracking-tight mb-5">
+            Weekly Research Challenges &amp; <span className="text-[#8B2E1A]">Achievements</span>
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-sans max-w-2xl mx-auto">
+            A structured, collaborative merit portal designed to build students' research identity. Senior-junior teams tackle weekly materials science assignments — with the top group officially spotlighted as <strong className="text-[#0F172A] font-bold">Performer of the Week</strong>.
+          </p>
         </div>
-        <h1 className="text-5xl sm:text-6xl font-black text-[#0F172A] leading-tight tracking-tight mb-5">
-          Verified Progress
-        </h1>
-        <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto">
-          Every achievement published here is real, documented, and verified. We do not inflate our record.
-          SOMAME Team Research is in its founding stage — and we are proud of that honesty.
-        </p>
-      </div>
-    </section>
+      </section>
 
-    {/* Empty State */}
-    <section className="py-20 md:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="relative overflow-hidden rounded-3xl border-2 border-dashed border-[#E8E4DF] p-14 sm:p-20 bg-white">
-          <div className="relative">
-            <div className="w-20 h-20 rounded-2xl border border-[#E8E4DF] bg-[#F8F7F5] flex items-center justify-center text-4xl mx-auto mb-6 shadow-2xs">
-              🏛️
+      {/* 2. Current Status Callout (Transparent, Honest, No Fake Data) */}
+      <section className="py-10 bg-white border-b border-[#E8E4DF]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-6 sm:p-8 rounded-3xl border border-[#8B2E1A]/20 bg-gradient-to-r from-[#FAF0EE]/60 via-white to-[#FAF0EE]/40 flex flex-col md:flex-row items-center gap-6 shadow-2xs">
+            <div className="w-14 h-14 rounded-2xl bg-[#FAF0EE] border border-[#8B2E1A]/20 flex items-center justify-center text-[#8B2E1A] shrink-0 shadow-2xs">
+              <Clock className="w-7 h-7" />
             </div>
-            <div className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest mb-3">
-              Archive Opening Soon
+
+            <div className="flex-grow text-center md:text-left space-y-1">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#8B2E1A] text-white">
+                  Cycle 01 Upcoming
+                </span>
+                <span className="text-xs font-mono text-slate-500 font-semibold">
+                  Departmental Orientation Phase
+                </span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-[#0F172A]">
+                Weekly Assignments Begin Following Directorate Meeting
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                Weekly tasks and group pairings will be officially assigned during our upcoming departmental sessions. Once teams submit their research reports, the official <strong>Performer of the Week</strong> spotlight and group archives will be verified and published right here.
+              </p>
             </div>
-            <h2 className="text-4xl font-black text-[#0F172A] leading-tight mb-4">
-              Our Story Is Just Beginning
+
+            <div className="shrink-0 text-center md:text-right">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E4DF] text-[11px] font-mono font-semibold text-slate-600 shadow-2xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#8B2E1A]" />
+                <span>Zero Fabricated Data</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. The 4-Step Weekly Workflow (How It Works) */}
+      <section className="py-16 sm:py-24 bg-[#F8F7F5] border-b border-[#E8E4DF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest block mb-2">
+              THE RECOGNITION PIPELINE
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] tracking-tight">
+              How the Weekly Challenge Works
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed max-w-xl mx-auto">
-              SOMAME Team Research launched in 2025. This archive will be populated as verified achievements
-              are earned, documented, and confirmed by our Society Advisor.
+            <p className="mt-2 text-sm sm:text-base text-slate-600">
+              From task announcement to permanent portfolio recognition — an honest, collaborative pathway.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    {/* Categories */}
-    <section className="bg-[#F8F7F5] py-20 md:py-24 border-t border-[#E8E4DF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-black text-[#0F172A] tracking-tight">Achievement Categories</h2>
-          <p className="text-slate-500 mt-2">When achievements are earned, they will be archived under these categories.</p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
-          {categories.map((c, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-dashed border-[#E8E4DF] p-5 text-center shadow-2xs">
-              <div className="text-2xl mb-2">{c.icon}</div>
-              <div className="font-bold text-[#0F172A] text-sm mb-1">{c.title}</div>
-              <div className="text-[11px] text-slate-400">{c.sub}</div>
-              <div className="mt-3 text-[10px] font-mono text-[#8B2E1A] font-semibold">0 entries</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((s) => {
+              const IconComp = s.icon;
+              return (
+                <div
+                  key={s.num}
+                  className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8E4DF] flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all shadow-2xs"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-[#FAF0EE] border border-[#8B2E1A]/15 flex items-center justify-center text-[#8B2E1A]">
+                        <IconComp className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-400">
+                        STEP {s.num}
+                      </span>
+                    </div>
 
-    {/* Verification Process */}
-    <section className="py-20 md:py-24 bg-white border-t border-[#E8E4DF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8E4DF] bg-[#F8F7F5] mb-5 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#8B2E1A]" />
-            <span className="text-[11px] font-mono font-semibold text-[#8B2E1A] uppercase tracking-widest">Integrity Protocol</span>
+                    <span className="inline-block text-[10px] font-mono font-bold text-[#8B2E1A] uppercase tracking-wider mb-1">
+                      {s.badge}
+                    </span>
+
+                    <h3 className="text-lg font-black text-[#0F172A] mb-2 leading-snug">
+                      {s.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                      {s.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 pt-3 border-t border-[#E8E4DF] flex items-center justify-between text-[11px] font-mono text-slate-400">
+                    <span>Collaborative Merit</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#8B2E1A]" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
-          <h2 className="text-4xl font-black text-[#0F172A] tracking-tight">
-            Our Verification Process
-          </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-          {verificationSteps.map((s, i) => (
-            <div
-              key={i}
-              className={`p-5 rounded-2xl bg-[#F8F7F5] border border-[#E8E4DF] text-center hover:shadow-sm transition-all shadow-2xs ${
-                i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
-              }`}
-            >
-              <div
-                className="w-9 h-9 rounded-xl mx-auto mb-3 flex items-center justify-center text-white text-[11px] font-mono font-bold"
-                style={{ background: i === 2 ? '#8B2E1A' : '#0F172A' }}
-              >
-                {s.step}
+      </section>
+
+      {/* 4. Why This Builds Student Identity (Benefits for Members) */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#E8E4DF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest block mb-2">
+              STUDENT EMPOWERMENT
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] tracking-tight">
+              Building Real Academic Identity
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-slate-600">
+              This is not just an assignment — it is a verifiable digital portfolio for every participant.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {studentBenefits.map((b, i) => {
+              const BIcon = b.icon;
+              return (
+                <div
+                  key={i}
+                  className="p-7 rounded-3xl border border-[#E8E4DF] bg-[#F8F7F5] hover:bg-white hover:border-[#8B2E1A]/30 hover:shadow-md transition-all shadow-2xs flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E4DF] flex items-center justify-center text-[#8B2E1A] mb-5 shadow-2xs">
+                      <BIcon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-black text-[#0F172A] mb-2.5">
+                      {b.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                      {b.desc}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-3 border-t border-[#E8E4DF] flex items-center justify-between text-[11px] font-mono text-slate-400">
+                    <span>Verified Protocol</span>
+                    <Sparkles className="w-3.5 h-3.5 text-[#8B2E1A]" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Evaluation Rubrics & Integrity Standard */}
+      <section className="py-16 sm:py-24 bg-[#F8F7F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8E4DF] bg-white shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8B2E1A]" />
+                <span className="text-[11px] font-mono font-bold text-[#8B2E1A] uppercase tracking-widest">
+                  Evaluation Framework
+                </span>
               </div>
-              <div className="font-bold text-[#0F172A] text-[14px] mb-1">{s.title}</div>
-              <p className="text-[12px] text-slate-500 leading-relaxed">{s.desc}</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] tracking-tight">
+                How Reports Are Judged
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
+                Submissions are reviewed jointly by the Directorate and evaluated under the scientific oversight of our Society Advisor Dr. Khushnuda Nur. Only genuinely defensible, rigorous work earns the Performer of the Week honor.
+              </p>
+              <div className="p-4 rounded-2xl bg-white border border-[#E8E4DF] text-xs font-mono text-slate-600 shadow-2xs inline-block text-left">
+                <span className="text-[#8B2E1A] font-bold">Standard:</span> No plagiarized content, no unverified claims. Every calculation and literature review must be reproducible.
+              </div>
             </div>
-          ))}
+
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {rubrics.map((r, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-6 rounded-2xl border border-[#E8E4DF] shadow-2xs flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-mono font-bold text-slate-400">Pillar 0{idx + 1}</span>
+                      <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#FAF0EE] text-[#8B2E1A]">
+                        {r.weight}
+                      </span>
+                    </div>
+                    <h4 className="font-bold text-[#0F172A] text-base mb-1.5">{r.title}</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed font-sans">{r.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-);
+      </section>
+    </div>
+  );
+};

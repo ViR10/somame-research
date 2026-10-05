@@ -68,6 +68,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                 alt="SOMAME Team Research - Society of Metallurgical and Material Engineers UET Lahore"
                 width={36}
                 height={36}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-9 h-9 object-contain"
               />
             </div>

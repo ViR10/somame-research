@@ -60,14 +60,20 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
           <span className="text-xs font-mono font-bold text-[#8B2E1A] uppercase tracking-widest block mb-4">
             INQUIRY CATEGORIES
           </span>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
             {categories.map((cat, idx) => (
-              <div
+              <button
                 key={idx}
-                className="p-4 rounded-2xl border border-[#E8E4DF] bg-[#F8F7F5] hover:bg-white hover:border-[#0F172A]/30 transition-all text-[#0F172A] font-semibold text-xs font-mono text-center shadow-2xs"
+                type="button"
+                onClick={() => setFormData((prev) => ({ ...prev, category: cat }))}
+                className={`p-3 sm:p-4 rounded-2xl border transition-all font-semibold text-xs font-mono text-center shadow-2xs cursor-pointer ${
+                  formData.category === cat
+                    ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-xs ring-2 ring-[#0F172A]/10'
+                    : 'bg-[#F8F7F5] border-[#E8E4DF] text-[#0F172A] hover:bg-white hover:border-[#0F172A]/30'
+                }`}
               >
                 {cat}
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -202,7 +208,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Student / Researcher"
-                        className="w-full text-sm px-4 py-3 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
+                        className="w-full text-base sm:text-sm px-4 py-3.5 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
                       />
                     </div>
                     <div>
@@ -215,7 +221,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. student@uet.edu.pk"
-                        className="w-full text-sm px-4 py-3 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
+                        className="w-full text-base sm:text-sm px-4 py-3.5 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
                       />
                     </div>
                   </div>
@@ -227,7 +233,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
                     <select
                       value={formData.category}
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full text-sm px-4 py-3 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5] font-mono text-[#0F172A]"
+                      className="w-full text-base sm:text-sm px-4 py-3.5 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5] font-mono text-[#0F172A]"
                     >
                       {categories.map((c, i) => (
                         <option key={i} value={c}>
@@ -247,7 +253,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="e.g. Research Seminar Inquiry / Student Participation"
-                      className="w-full text-sm px-4 py-3 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
+                      className="w-full text-base sm:text-sm px-4 py-3.5 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
                     />
                   </div>
 
@@ -261,7 +267,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigateToResearch }
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Write your inquiry or question in detail..."
-                      className="w-full text-sm px-4 py-3 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
+                      className="w-full text-base sm:text-sm px-4 py-3.5 rounded-xl border border-[#E8E4DF] focus:outline-none focus:border-[#0F172A] focus:ring-1 focus:ring-[#0F172A] transition-all bg-[#F8F7F5]"
                     />
                   </div>
 

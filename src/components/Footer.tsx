@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   alt="SOMAME Team Research - Official Society Logo"
                   width={36}
                   height={36}
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   className="w-full h-full object-contain"
                 />
